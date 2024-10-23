@@ -48,7 +48,7 @@
             bottom: 0;
         }
 
-        /* Chatbot styling */
+        /* Chatbot container styling */
         #chatbot-container {
             position: fixed;
             bottom: 20px;
@@ -84,7 +84,7 @@
     <main>
         <h1>About Our Services</h1>
         <p>
-            We offer various services tailored to your needs, including Lattice semiconductor's FPGA products and VLSI-related design work. Our team of experts is dedicated to providing high-quality services, ensuring your projects are completed with efficiency and precision.
+            We specialize in providing cutting-edge solutions and support for Lattice Semiconductor FPGA products, including the CertusPro, XP2, and Avant families. Our interactive chatbot, powered by advanced AI, is here to assist you with all your FPGA-related queries. Whether you need detailed specifications, datasheets, or information about the internal architecture of Lattice FPGAs, our chatbot is ready to provide accurate and timely responses. With our expertise and commitment to precision, we ensure that your projects involving Lattice FPGAs are optimized for success. Let us help you navigate the world of programmable logic with ease!
         </p>
         <p>
             Feel free to explore our website and learn more about the projects we are working on. You can also interact with our chatbot for instant help or inquiries.
@@ -92,16 +92,14 @@
     </main>
 
     <!-- Chatbot Integration -->
-    <div id="chatbot-container">
-        <flowise-fullchatbot></flowise-fullchatbot>
-        <script type="module">
-            import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
-            Chatbot.initFull({
-                chatflowid: "97509bee-1c30-415d-b2b5-86f86473160d",
-                apiHost: "https://simelabs-1.app.flowiseai.com",
-            });
-        </script>
-    </div>
+    <flowise-fullchatbot></flowise-fullchatbot>
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
+        Chatbot.initFull({
+            chatflowid: "97509bee-1c30-415d-b2b5-86f86473160d",
+            apiHost: "https://simelabs-1.app.flowiseai.com",
+        });
+    </script>
 
     <!-- Toggle button for chatbot -->
     <div id="chatbot-toggle">Chat with us</div>
@@ -114,7 +112,7 @@
     <!-- JavaScript to toggle chatbot visibility -->
     <script>
         const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatbotContainer = document.getElementById('chatbot-container');
+        const chatbotContainer = document.querySelector('flowise-fullchatbot');
 
         chatbotToggle.addEventListener('click', function() {
             if (chatbotContainer.style.display === "none") {
